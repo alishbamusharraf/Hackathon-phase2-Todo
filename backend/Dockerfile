@@ -11,4 +11,5 @@ WORKDIR /app/backend
 
 EXPOSE 8000
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Render will provide the PORT env var, default to 8000 if not set
+CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
