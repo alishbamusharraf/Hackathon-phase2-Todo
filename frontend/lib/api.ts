@@ -38,7 +38,12 @@ class ApiClient {
   private token: string | null = null;
 
   constructor() {
-    this.baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+    let url = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+    // Ensure the URL ends with /api for the ApiClient
+    if (!url.endsWith('/api')) {
+      url = url.replace(/\/$/, '') + '/api';
+    }
+    this.baseUrl = url;
   }
 
   // Set the JWT token for subsequent requests
