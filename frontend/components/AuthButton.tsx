@@ -12,20 +12,20 @@ interface AuthButtonProps {
   className?: string;
 }
 
-const AuthButton: React.FC<AuthButtonProps> = ({ 
-  children, 
-  type = 'button', 
-  onClick, 
-  disabled = false, 
+const AuthButton: React.FC<AuthButtonProps> = ({
+  children,
+  type = 'button',
+  onClick,
+  disabled = false,
   variant = 'primary',
-  className = '' 
+  className = ''
 }) => {
   const baseClasses = "flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-300 transform hover:scale-105 disabled:opacity-50";
-  
-  const variantClasses = variant === 'primary' 
-    ? "text-white bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 focus:ring-indigo-500"
-    : "text-indigo-500 bg-transparent border border-indigo-500 hover:bg-indigo-500 hover:text-white focus:ring-indigo-500";
-  
+
+  const variantClasses = variant === 'primary'
+    ? "text-white bg-cyan-600 hover:bg-cyan-500 focus:ring-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.3)]"
+    : "text-cyan-400 bg-transparent border border-cyan-400 hover:bg-cyan-400 hover:text-white focus:ring-cyan-500";
+
   return (
     <motion.button
       type={type}

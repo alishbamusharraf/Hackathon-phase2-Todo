@@ -12,11 +12,11 @@ const ToastProvider = () => {
         style: {
           background: 'rgba(0, 0, 0, 0.8)',
           color: '#fff',
-          border: '1px solid rgba(99, 102, 241, 0.5)', // indigo-500 with transparency
+          border: '1px solid rgba(6, 182, 212, 0.5)', // cyan-500 with transparency
           backdropFilter: 'blur(10px)',
           WebkitBackdropFilter: 'blur(10px)',
           borderRadius: '0.5rem',
-          boxShadow: '0 0 15px rgba(99, 102, 241, 0.5)', // neon glow effect
+          boxShadow: '0 0 15px rgba(6, 182, 212, 0.5)', // neon glow effect
         },
         success: {
           style: {

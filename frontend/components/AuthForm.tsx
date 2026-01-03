@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 interface AuthFormProps {
   type: 'signin' | 'signup';
@@ -28,7 +29,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit, loading = false }) 
   };
 
   return (
-    <motion.form 
+    <motion.form
       onSubmit={handleSubmit}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -43,11 +44,11 @@ const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit, loading = false }) 
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 peer"
+            className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 peer"
             placeholder=" "
           />
-          <label 
-            className="absolute left-4 top-3 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-cyan-400 peer-focus:font-medium"
+          <label
+            className="absolute left-4 top-3 text-sm text-gray-400 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:text-xs peer-focus:bg-[#080a0f] peer-focus:px-1 peer-focus:text-cyan-400 peer-focus:font-medium peer-[:not(:placeholder-shown)]:-top-2 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-[#080a0f] peer-[:not(:placeholder-shown)]:px-1 peer-[:not(:placeholder-shown)]:text-cyan-400"
           >
             Full Name
           </label>
@@ -61,11 +62,11 @@ const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit, loading = false }) 
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 peer"
+          className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 peer"
           placeholder=" "
         />
-        <label 
-          className="absolute left-4 top-3 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-cyan-400 peer-focus:font-medium"
+        <label
+          className="absolute left-4 top-3 text-sm text-gray-400 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:text-xs peer-focus:bg-[#080a0f] peer-focus:px-1 peer-focus:text-cyan-400 peer-focus:font-medium peer-[:not(:placeholder-shown)]:-top-2 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-[#080a0f] peer-[:not(:placeholder-shown)]:px-1 peer-[:not(:placeholder-shown)]:text-cyan-400"
         >
           Email
         </label>
@@ -79,11 +80,11 @@ const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit, loading = false }) 
           onChange={handleChange}
           required
           minLength={8}
-          className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 peer"
+          className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 peer"
           placeholder=" "
         />
-        <label 
-          className="absolute left-4 top-3 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-cyan-400 peer-focus:font-medium"
+        <label
+          className="absolute left-4 top-3 text-sm text-gray-400 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:text-xs peer-focus:bg-[#080a0f] peer-focus:px-1 peer-focus:text-cyan-400 peer-focus:font-medium peer-[:not(:placeholder-shown)]:-top-2 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-[#080a0f] peer-[:not(:placeholder-shown)]:px-1 peer-[:not(:placeholder-shown)]:text-cyan-400"
         >
           Password
         </label>
@@ -97,14 +98,40 @@ const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit, loading = false }) 
             value={formData.confirmPassword}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 peer"
+            className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 peer"
             placeholder=" "
           />
-          <label 
-            className="absolute left-4 top-3 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-cyan-400 peer-focus:font-medium"
+          <label
+            className="absolute left-4 top-3 text-sm text-gray-400 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:text-xs peer-focus:bg-[#080a0f] peer-focus:px-1 peer-focus:text-cyan-400 peer-focus:font-medium peer-[:not(:placeholder-shown)]:-top-2 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-[#080a0f] peer-[:not(:placeholder-shown)]:px-1 peer-[:not(:placeholder-shown)]:text-cyan-400"
           >
             Confirm Password
           </label>
+        </div>
+      )}
+      {type === 'signup' && (
+        <div className="flex items-start">
+          <div className="flex items-center h-5">
+            <input
+              id="terms"
+              name="terms"
+              type="checkbox"
+              required
+              className="h-4 w-4 text-cyan-600 focus:ring-cyan-500 border-gray-600 rounded bg-black/30 cursor-pointer"
+            />
+          </div>
+          <div className="ml-3 text-sm">
+            <label htmlFor="terms" className="text-gray-300">
+              I agree to the{' '}
+              <Link
+                href="/terms-and-conditions"
+                target="_blank"
+                className="text-cyan-400 hover:text-cyan-300 font-medium transition-colors"
+                onClick={(e: React.MouseEvent) => e.stopPropagation()}
+              >
+                Terms & Conditions
+              </Link>
+            </label>
+          </div>
         </div>
       )}
 
@@ -115,7 +142,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit, loading = false }) 
               id="remember-me"
               name="remember-me"
               type="checkbox"
-              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-600 rounded bg-black/30"
+              className="h-4 w-4 text-cyan-600 focus:ring-cyan-500 border-gray-600 rounded bg-black/30"
             />
             <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-300">
               Remember me
@@ -136,7 +163,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit, loading = false }) 
         <button
           type="submit"
           disabled={loading}
-          className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 transform hover:scale-105 disabled:opacity-50"
+          className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-cyan-600 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 shadow-[0_0_15px_rgba(6,182,212,0.3)]"
         >
           {loading ? (
             <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

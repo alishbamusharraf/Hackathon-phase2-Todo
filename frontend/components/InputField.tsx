@@ -16,27 +16,26 @@ interface InputFieldProps {
   rows?: number;
 }
 
-const InputField: React.FC<InputFieldProps> = ({ 
-  label, 
-  id, 
-  type = 'text', 
-  value, 
-  onChange, 
-  error, 
-  required = false, 
-  placeholder = '', 
+const InputField: React.FC<InputFieldProps> = ({
+  label,
+  id,
+  type = 'text',
+  value,
+  onChange,
+  error,
+  required = false,
+  placeholder = '',
   textarea = false,
   rows = 3
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
-  const inputClasses = `w-full px-4 py-3 bg-black/30 border ${
-    error 
-      ? 'border-red-500 focus:ring-red-500' 
-      : isFocused 
-        ? 'border-cyan-400 focus:ring-cyan-400' 
-        : 'border-white/10 focus:ring-indigo-500'
-  } rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300`;
+  const inputClasses = `w-full px-4 py-3 bg-black/30 border ${error
+    ? 'border-red-500 focus:ring-red-500'
+    : isFocused
+      ? 'border-cyan-400 focus:ring-cyan-400'
+      : 'border-white/10 focus:ring-cyan-500'
+    } rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300`;
 
   return (
     <motion.div
@@ -57,14 +56,11 @@ const InputField: React.FC<InputFieldProps> = ({
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           />
-          <label 
-            className={`absolute left-4 top-3 text-sm ${
-              value 
-                ? 'top-0 text-xs text-cyan-400 font-medium' 
-                : isFocused 
-                  ? 'top-0 text-xs text-cyan-400 font-medium' 
-                  : 'text-gray-400'
-            } transition-all duration-300`}
+          <label
+            className={`absolute left-4 transition-all duration-300 pointer-events-none ${value || isFocused
+              ? '-top-2 text-xs text-cyan-400 font-medium bg-[#080a0f] px-1'
+              : 'top-3 text-sm text-gray-400'
+              }`}
           >
             {label} {required && <span className="text-red-500">*</span>}
           </label>
@@ -82,20 +78,17 @@ const InputField: React.FC<InputFieldProps> = ({
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           />
-          <label 
-            className={`absolute left-4 top-3 text-sm ${
-              value 
-                ? 'top-0 text-xs text-cyan-400 font-medium' 
-                : isFocused 
-                  ? 'top-0 text-xs text-cyan-400 font-medium' 
-                  : 'text-gray-400'
-            } transition-all duration-300`}
+          <label
+            className={`absolute left-4 transition-all duration-300 pointer-events-none ${value || isFocused
+              ? '-top-2 text-xs text-cyan-400 font-medium bg-[#080a0f] px-1'
+              : 'top-3 text-sm text-gray-400'
+              }`}
           >
             {label} {required && <span className="text-red-500">*</span>}
           </label>
         </>
       )}
-      
+
       {error && (
         <p className="mt-2 text-sm text-red-500 flex items-center">
           <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">

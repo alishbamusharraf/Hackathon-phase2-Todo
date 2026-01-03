@@ -81,14 +81,14 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onTaskUpdate, onTaskDelete })
               id={`task-checkbox-${task.id}`}
               checked={isCompleted}
               onChange={handleToggleCompletion}
-              className="h-5 w-5 rounded border-gray-600 bg-black/30 text-indigo-600 focus:ring-indigo-500 focus:ring-offset-0 cursor-pointer"
+              className="h-5 w-5 rounded border-gray-600 bg-black/30 text-cyan-600 focus:ring-cyan-500 focus:ring-offset-0 cursor-pointer"
               whileTap={{ scale: 1.2 }}
               aria-label={`Mark task "${task.title}" as ${isCompleted ? 'incomplete' : 'complete'}`}
             />
             <motion.label
-              className={`ml-3 text-lg font-medium ${isCompleted ? 'line-through text-green-400/70' : 'text-white'}`}
+              className={`ml-3 text-lg font-medium ${isCompleted ? 'line-through text-cyan-400/70' : 'text-white'}`}
               animate={{
-                color: isCompleted ? '#4ade80' : '#ffffff',
+                color: isCompleted ? '#22d3ee' : '#ffffff',
                 textDecoration: isCompleted ? 'line-through' : 'none'
               }}
               transition={{ duration: 0.3 }}
@@ -124,8 +124,6 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onTaskUpdate, onTaskDelete })
         {task.description && (
           <div className="text-gray-300 mb-4 flex-grow">
             <p className="truncate max-w-full">{task.description}</p>
-            {/* Fade effect for long descriptions */}
-            <div className="h-4 w-full bg-gradient-to-t from-black/30 to-transparent mt-2"></div>
           </div>
         )}
 

@@ -19,10 +19,17 @@ const HomePage = () => {
   }, [user, loading, router]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950 particle-bg">
-      <div className="text-center">
-        <div className="text-4xl font-bold gradient-text mb-4">Todo App</div>
-        <p className="text-gray-400">Loading...</p>
+    <div className="min-h-screen flex items-center justify-center bg-slate-950 relative overflow-hidden">
+      {/* Subtle cyan background glow */}
+      <div className="absolute inset-0 bg-cyan-900/20 blur-3xl"></div>
+
+      <div className="relative z-10 text-center p-8 bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10">
+        <h1 className="text-5xl font-extrabold text-white mb-4 tracking-wide">
+          Todo App
+        </h1>
+        <p className="text-gray-300 text-lg animate-pulse">
+          Loading...
+        </p>
       </div>
     </div>
   );
