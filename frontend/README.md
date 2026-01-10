@@ -1,98 +1,78 @@
-# Todo Frontend
+# ✨ TaskFlow Frontend
 
-A beautiful and modern todo application frontend built with Next.js, featuring glassmorphism design, neon glow effects, and smooth animations.
+A state-of-the-art, premium task management interface built with **Next.js 15+**. Featuring a signature **TaskFlow Design System**, it combines high-end glassmorphism with vibrant, animated gradients for a truly elite user experience.
 
-## Features
+## 🌟 Key Features
 
-- 🎨 Stunning glassmorphism UI with neon glow effects
-- 📱 Fully responsive design (mobile, tablet, desktop)
-- 🔐 Secure authentication with Better Auth
-- ⚡ Smooth animations with Framer Motion
-- 🎯 Task management (create, read, update, delete)
-- 🔄 Real-time task status updates
-- 🎯 Intuitive user interface with delightful interactions
+- 🎨 **Premium Aesthetic**: Signature Purple-Pink-Blue animated gradient flow.
+- 🧊 **Elite Glassmorphism**: 20px backdrop blur with inner-glow gradient borders.
+- ⚡ **Kinetic UI**: Fluid micro-animations and spring-based transitions via Framer Motion.
+- 📱 **Adaptive Architecture**: Flawless experience across mobile, tablet, and desktop.
+- 📊 **Productivity Analytics**: Real-time stats dashboard for at-a-glance management.
+- 🎯 **Tactile Interactions**: Delightful hover and click states with kinetic feedback.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- **Framework**: Next.js 16+ (App Router)
+- **Framework**: Next.js 15 (App Router)
+- **Design System**: Tailwind CSS + Custom Design Tokens
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS with custom glassmorphism utilities
 - **Animations**: Framer Motion
-- **UI Components**: Custom-built with Tailwind
-- **State Management**: React Hooks
-- **Notifications**: React Hot Toast
+- **Typography**: Outfit & Inter (Google Fonts)
+- **Feedback**: React Hot Toast
 
-## Installation
+## 🚀 Getting Started
 
-1. Clone the repository:
+1. Clone the repository and navigate to the frontend:
 ```bash
-git clone <repository-url>
 cd frontend
 ```
 
-2. Install dependencies:
+2. Install the production dependencies:
 ```bash
 npm install
 ```
 
-3. Set up environment variables:
+3. Configure your environment:
 ```bash
-cp .env.example .env.local
-# Update the variables in .env.local as needed
+# Create .env.local and set your backend URL
+NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
-4. Run the development server:
+4. Launch the development workspace:
 ```bash
 npm run dev
 ```
 
-The application will be available at [http://localhost:3000](http://localhost:3000).
+The TaskFlow interface will be available at [http://localhost:3000](http://localhost:3000).
 
-## Environment Variables
-
-- `NEXT_PUBLIC_API_URL`: The URL of the backend API (default: http://localhost:8000)
-
-## Scripts
-
-- `npm run dev`: Start the development server
-- `npm run build`: Build the application for production
-- `npm run start`: Start the production server
-- `npm run lint`: Run the linter
-
-## Project Structure
+## 📂 Project Architecture
 
 ```
 frontend/
-├── app/                 # Next.js App Router pages
-│   ├── layout.tsx       # Root layout with Navbar
-│   ├── page.tsx         # Home page (redirects to dashboard if authenticated)
-│   ├── signin/page.tsx  # Signin page
-│   ├── signup/page.tsx  # Signup page
-│   └── dashboard/
-│       └── page.tsx     # Dashboard page with task grid
-├── components/          # Reusable UI components
-│   ├── Navbar.tsx       # Navigation bar with user avatar/logout
-│   ├── TaskCard.tsx     # Glassmorphism task card with hover effects
-│   ├── GlassCard.tsx    # Reusable glassmorphism card component
-│   ├── TaskForm.tsx     # Form for adding/editing tasks
-│   └── ProtectedRoute.tsx # Component for protecting routes
-├── lib/                 # Utility functions
-│   └── api.ts           # API client with JWT handling
-├── hooks/               # Custom React hooks
-│   └── useAuth.ts       # Authentication state management
-├── styles/              # Custom styles and utilities
-│   └── globals.css      # Global CSS and custom utilities
-└── public/              # Static assets
+├── app/                  # TaskFlow Pages & Layouts
+│   ├── layout.tsx        # Global design wrapper
+│   ├── page.tsx          # Animated loading gateway
+│   ├── dashboard/page.tsx# Main productivity workspace
+│   ├── signin/page.tsx   # Premium authentication
+│   └── terms-and-conditions/page.tsx # Formal guidelines
+├── components/           # Atomic UI Components
+│   ├── GlassCard.tsx     # The base of our glassmorphism
+│   ├── TaskCard.tsx      # Interactive task item
+│   ├── TaskForm.tsx      # Workflow creation node
+│   └── Navbar.tsx        # High-end navigation
+├── styles/               # Design Tokens
+│   └── globals.css       # Core animations & CSS variables
+└── lib/                  # Backend Synchronizers
+    └── api.ts            # Secure API orchestration
 ```
 
-## API Integration
+## 💎 Design System Details
 
-The frontend communicates with the backend API through the client in `lib/api.ts`, which handles JWT authentication automatically. All API calls include the authentication token in the request headers.
+- **Gradients**: Custom `btn-gradient` and `gradient-text` utility classes.
+- **Backgrounds**: `particle-bg` for depth and movement.
+- **Glassmorphism**: `glass` and `glass-card` utilities for depth and transparency.
+- **Focus States**: High-contrast glow effects for better accessibility and style.
 
-## Custom UI Elements
+---
 
-- Glassmorphism cards with backdrop blur effects
-- Neon glow on hover and focus states
-- Smooth animations using Framer Motion
-- Responsive design for all screen sizes
-- Dark theme with indigo, cyan, and purple accents
+*Designed for high-performance productivity.*

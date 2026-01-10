@@ -1,110 +1,84 @@
-# Todo Backend API
+# ⚙️ TaskFlow Backend API
 
-A secure, multi-user backend for the Todo application built with FastAPI and SQLModel.
+A robust, high-performance backend ecosystem built with **FastAPI** and **SQLModel**, designed to power the premium **TaskFlow** frontend experience.
 
-## Features
+## 🚀 core Features
 
-- JWT-based authentication with Better Auth integration
-- Task management with CRUD operations
-- User isolation (each user sees only their own tasks)
-- Filtering and sorting capabilities
-- Neon PostgreSQL database integration
-- Docker-ready deployment
+- 🔐 **Secure JWT Orchestration**: Advanced authentication flow with shared secret verification.
+- ⚡ **Asynchronous CRUD**: Optimized task management endpoints for real-time synchronization.
+- 🛡️ **Member Isolation**: Strict database-level isolation ensuring your data remains private.
+- 📊 **Neon PostgreSQL Integration**: Leveraging serverless SQL for world-class persistence.
+- 🐳 **Container Ready**: Fully containerized architecture for seamless scaling.
 
-## Prerequisites
+## 🛠️ Tech Stack
 
-- Python 3.13+
-- UV package manager
-- Access to Neon PostgreSQL database
-- Better Auth configured on frontend
+- **Framework**: FastAPI (High-performance Python)
+- **ORM**: SQLModel (Pydantic + SQLAlchemy)
+- **Database**: Neon (Serverless PostgreSQL)
+- **Security**: PyJWT & Passlib (Bcrypt)
+- **Environment**: Python 3.13+
 
-## Setup Instructions
+## 📦 Setup & Installation
 
-### 1. Clone and Navigate
+1. Clone the repository and enter the backend workspace:
 ```bash
-git clone <repository-url>
 cd backend
 ```
 
-### 2. Install Dependencies
+2. Initialize a virtual environment and activate it:
 ```bash
-uv init
-uv add fastapi sqlmodel uvicorn python-dotenv pyjwt python-jose[cryptography]
+python -m venv venv
+# Windows
+.\venv\Scripts\Activate.ps1
+# Unix/macOS
+source venv/bin/activate
 ```
 
-### 3. Environment Configuration
-Create a `.env` file in the backend directory:
+3. Install the required production dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Configure your secrets in a `.env` file:
 ```env
-BETTER_AUTH_SECRET=0ptqlUaq8uCH7lQPVd0Bl5ryd6VtLdOX
+BETTER_AUTH_SECRET=lvXnm0qeHpvqUO1me5OkGtmX4wq7hhCf
 BETTER_AUTH_URL=http://localhost:3000
-DATABASE_URL=postgresql://neondb_owner:npg_hJvC09KfQFab@ep-dry-smoke-a4zvp08s-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require
+DATABASE_URL=your_neon_postgres_url
 ```
 
-### 4. Run Development Server
+5. Launch the high-performance API server:
 ```bash
 uvicorn main:app --reload
 ```
 
-The API will be available at `http://localhost:8000`
+The API will be operational at `http://localhost:8000`.
 
-## API Endpoints
+## 🌐 API Specification
 
-### Authentication
-- All API endpoints require a valid JWT token in the Authorization header
-- Token is obtained from Better Auth on the frontend
+### Authentication Protocol
 - Format: `Authorization: Bearer <token>`
+- Tokens are cryptographically verified using the shared `BETTER_AUTH_SECRET`.
 
-### Task Management Endpoints
-- `GET /api/tasks` - List user's tasks with filtering and sorting
-- `POST /api/tasks` - Create a new task
-- `GET /api/tasks/{task_id}` - Get a specific task
-- `PUT /api/tasks/{task_id}` - Update a task
-- `DELETE /api/tasks/{task_id}` - Delete a task
-- `PATCH /api/tasks/{task_id}/complete` - Toggle task completion
+### Task Productivity Endpoints
+- `GET /api/tasks`: Retrieve all tasks for the authenticated member.
+- `POST /api/tasks`: Synchronize a new task to the cloud.
+- `GET /api/tasks/{id}`: Detailed view of a specific task.
+- `PUT /api/tasks/{id}`: Full update of task metadata.
+- `DELETE /api/tasks/{id}`: Permanent removal of a task node.
+- `PATCH /api/tasks/{id}/complete`: High-speed task completion toggle.
 
-## Docker Deployment
+## 📂 Project Architecture
 
-To run the application using Docker:
-
-```bash
-docker-compose up --build
-```
-
-## Project Structure
 ```
 backend/
-├── main.py              # FastAPI app with CORS configuration
-├── .env                 # Environment variables
-├── .env.example         # Example environment variables
-├── requirements.txt     # Python dependencies
-├── models/              # SQLModel models
-│   └── database.py      # User and Task models
-├── api/                 # API routers
-│   └── tasks.py         # Task endpoints
-├── core/                # Core functionality
-│   ├── config.py        # Configuration and settings
-│   ├── security.py      # JWT verification and authentication
-│   ├── database.py      # Database connection and session
-│   ├── exceptions.py    # Custom exceptions
-│   └── logging.py       # Logging configuration
-├── schemas/             # Pydantic schemas
-│   ├── user.py          # User schemas
-│   └── task.py          # Task schemas
-├── dependencies.py      # FastAPI dependencies (get_current_user, get_db)
-└── utils/               # Utility functions
-    └── helpers.py       # Helper functions
+├── main.py              # FastAPI Orchestrator
+├── models/              # Data Schemas (SQLModel)
+├── api/                 # Endpoint Logic
+├── core/                # Security & Database Engines
+├── schemas/             # Pydantic Data Validation
+└── dependencies.py      # Auth & Session Injectors
 ```
 
-## Key Technologies
-- FastAPI: Modern, fast web framework for building APIs
-- SQLModel: SQL databases with Python, combining SQLAlchemy and Pydantic
-- Neon PostgreSQL: Serverless PostgreSQL for scalable database storage
-- PyJWT: JSON Web Token implementation for authentication
-- python-dotenv: Loading environment variables from .env files
+---
 
-## Integration with Frontend
-The backend is designed to work seamlessly with the Next.js frontend:
-- JWT tokens from Better Auth are verified using the shared secret
-- All endpoints return JSON responses that match frontend expectations
-- CORS is configured to allow requests from the frontend URL
-- User isolation is enforced at the database level
+*Engineered to power professional workflows.*

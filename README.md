@@ -1,10 +1,10 @@
-# 🚀 Todo Hackathon Phase 2
+# ✨ TaskFlow - Premium Todo Hackathon Project
 
-A modern, full-stack Todo application with a stunning **Glassmorphism UI**, secure **JWT Authentication**, and a high-performance **FastAPI Backend**.
+A stunning, modern full-stack Todo application featuring a high-end **TaskFlow Premium UI**, secure **JWT Authentication**, and a high-performance **FastAPI Backend**.
 
 ## 🌟 Overview
 
-This project is a complete task management solution featuring a beautiful frontend built with Next.js and a robust backend built with FastAPI. It leverages **Better Auth** for seamless user authentication and **Neon PostgreSQL** for serverless data persistence.
+**TaskFlow** is a sophisticated task management ecosystem designed for the modern professional. It transcends the traditional todo list by providing a sensory-rich, glassmorphic interface that makes productivity feel premium. Built with **Next.js 15+** and **FastAPI**, it leverages **Neon PostgreSQL** for world-class serverless data persistence.
 
 ---
 
@@ -13,23 +13,24 @@ This project is a complete task management solution featuring a beautiful fronte
 - **Frontend**: Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion.
 - **Backend**: FastAPI, SQLModel, PyJWT.
 - **Database**: Neon (Serverless PostgreSQL).
-- **Authentication**: Better Auth (Custom JWT implementation).
+- **Authentication**: JWT-based security with shared secret verification.
 
 ---
 
 ## ✨ Features
 
-### 🎨 Frontend (Next.js)
-- **Glassmorphism UI**: Beautiful transparent cards with backdrop blur and neon glow.
-- **Responsive Design**: Optimized for mobile, tablet, and desktop.
-- **Animations**: Fluid transitions and micro-interactions powered by Framer Motion.
-- **User Dashboard**: Visual summary of tasks and a clean task grid.
+### 🎨 TaskFlow Premium UI (Next.js)
+- **Vibrant Gradient Flow**: A signature Purple-Pink-Blue animated design system.
+- **Advanced Glassmorphism**: High-saturation backdrop blur (20px) with elegant gradient borders.
+- **Fluid Micro-interactions**: Bespoke animations for every click and hover powered by Framer Motion.
+- **Dynamic Stats Dashboard**: Real-time visualization of your productivity metrics.
+- **Premium Typography**: Integration of Outfit and Inter fonts for a professional aesthetic.
 
-### ⚙️ Backend (FastAPI)
-- **Secure API**: JWT-based authentication with shared secrets.
-- **User Isolation**: Users only see and manage their own tasks.
-- **Performance**: High-speed endpoints with SQLModel for data validation.
-- **CRUD Operations**: Complete task lifecycle management (Create, Read, Update, Delete).
+### ⚙️ Robust Backend (FastAPI)
+- **Cryptographic Security**: Advanced JWT-based authentication ensuring data integrity.
+- **Privacy-First Architecture**: Strong user isolation logic; your workspace is your intellectual territory.
+- **High-Performance CRUD**: Optimized endpoints for lighting-fast task synchronization.
+- **Serverless Scaling**: Powered by Neon Postgres for instant scalability.
 
 ---
 
@@ -37,17 +38,18 @@ This project is a complete task management solution featuring a beautiful fronte
 
 ```text
 .
-├── backend/            # FastAPI Backend
-│   ├── main.py         # Entry point & CORS
+├── backend/            # FastAPI Python Backend
+│   ├── main.py         # Entry point & CORS configuration
 │   ├── models/         # SQLModel database schemas
-│   ├── api/            # API Route handlers
-│   └── Dockerfile      # Backend containerization
-├── frontend/           # Next.js Frontend
-│   ├── app/            # App Router (Pages & Layouts)
-│   ├── components/     # Reusable UI components
-│   └── lib/api.ts      # API Client with auto-JWT
-├── docker-compose.yml  # Local testing with Docker
-└── README.md           # You are here!
+│   ├── api/            # API Route handlers for task management
+│   └── .env            # Environment secrets
+├── frontend/           # Next.js TypeScript Frontend
+│   ├── app/            # App Router (TaskFlow Pages & Layouts)
+│   ├── components/     # Premium UI components (Glass cards, Navbars)
+│   ├── styles/         # Global design tokens & CSS animations
+│   └── lib/api.ts      # API Client with automated JWT handling
+├── docker-compose.yml  # Local orchestration with Docker
+└── README.md           # Project Documentation
 ```
 
 ---
@@ -62,8 +64,10 @@ This project is a complete task management solution featuring a beautiful fronte
 ### 2. Backend Setup
 ```bash
 cd backend
+python -m venv venv
+.\venv\Scripts\Activate.ps1   # On Windows
 pip install -r requirements.txt
-# Create .env with BETTER_AUTH_SECRET, BETTER_AUTH_URL, and DATABASE_URL
+# Configure .env with BETTER_AUTH_SECRET, BETTER_AUTH_URL, and DATABASE_URL
 uvicorn main:app --reload
 ```
 
@@ -71,24 +75,9 @@ uvicorn main:app --reload
 ```bash
 cd frontend
 npm install
-# Create .env.local with NEXT_PUBLIC_API_URL=http://localhost:8000
+# Configure .env.local with NEXT_PUBLIC_API_URL=http://localhost:8000
 npm run dev
 ```
-
----
-
-## 🌐 Deployment Guide
-
-### Backend (Render.com)
-1.  **Repo**: Push your code to GitHub.
-2.  **Service**: Create a new **Web Service** on Render.
-3.  **Config**: Select the `backend` folder as the root directory (or use the root `Dockerfile`).
-4.  **Env**: Set `DATABASE_URL`, `BETTER_AUTH_SECRET`, and `FRONTEND_URL`.
-
-### Frontend (Vercel.com)
-1.  **Repo**: Import your GitHub repository.
-2.  **Settings**: Set "Next.js" as the preset and `frontend` as the root directory.
-3.  **Env**: Set `NEXT_PUBLIC_API_URL` (to your Render URL) and `BETTER_AUTH_SECRET`.
 
 ---
 
@@ -101,15 +90,14 @@ npm run dev
 
 ### Frontend (`frontend/.env.local`)
 - `NEXT_PUBLIC_API_URL`: Your backend API URL.
-- `BETTER_AUTH_SECRET`: Same secret as backend.
 
 ---
 
 ## 🤝 Key Technologies
-- **Frontend**: Next.js, Tailwind CSS, Framer Motion, Better Auth.
+- **Frontend**: Next.js 15, Tailwind CSS, Framer Motion, TypeScript.
 - **Backend**: FastAPI, SQLModel, Uvicorn, PyJWT.
 - **Infrastructure**: Neon Postgres, Render, Vercel.
 
 ---
 
-*Built with ❤️ for the Todo Hackathon.*
+*Built with ✨ by TaskFlow Premium Design Systems.*
