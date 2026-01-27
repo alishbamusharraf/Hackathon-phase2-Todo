@@ -9,7 +9,7 @@ const HomePage = () => {
   const router = useRouter();
   const { user, loading } = useAuth();
 
-  useEffect(() => {
+  useEfect(() => {
     if (!loading) {
       if (user) {
         router.push('/dashboard');
@@ -54,6 +54,7 @@ const HomePage = () => {
           <div className="w-2 h-2 bg-pink-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
           <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
         </motion.div>
+      
 
         <p className="text-gray-400 mt-4">Loading your workspace...</p>
       </div>
